@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoHealth | Futuristic Health Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo and user info -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>NeoHealth</h1>
+            </div>
+            
+            <div class="user-info">
+                <div class="biometric">
+                    <i class="fas fa-fingerprint"></i>
+                    <span>Biometric Secured</span>
+                </div>
+                <div class="avatar">JD</div>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <!-- Sidebar navigation -->
+            <nav class="sidebar holographic">
+                <a href="#" class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-section="vitals">
+                    <i class="fas fa-heart"></i>
+                    <span>Vital Signs</span>
+                </a>
+                <a href="#" class="nav-item" data-section="analytics">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Health Analytics</span>
+                </a>
+                <a href="#" class="nav-item" data-section="alerts">
+                    <i class="fas fa-bell"></i>
+                    <span>Alerts & Notifications</span>
+                </a>
+                <a href="#" class="nav-item" data-section="hospital">
+                    <i class="fas fa-hospital"></i>
+                    <span>Hospital Sync</span>
+                </a>
+                <a href="#" class="nav-item" data-section="mobile">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile Devices</span>
+                </a>
+                <a href="#" class="nav-item" data-section="ai">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Assistant</span>
+                </a>
+            </nav>
+
+            <!-- Dashboard with health monitoring cards -->
+            <section class="dashboard" id="dashboard-content">
+                <!-- Heart Rate Card -->
+                <div class="card vitals-card holographic">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-heart"></i> Heart Rate</h2>
+                        <span class="card-status normal">Normal</span>
+                    </div>
+                    <div class="card-value">72 <span class="unit">bpm</span></div>
+                    <div class="vitals-container">
+                        <div class="vital-item">
+                            <div class="vital-label">Resting</div>
+                            <div>68 bpm</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Max Today</div>
+                            <div>124 bpm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Pressure & Oxygen Card -->
+                <div class="card vitals-card holographic">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-tint"></i> BP & Oxygen</h2>
+                        <span class="card-status warning">Attention</span>
+                    </div>
+                    <div class="card-value">128/82</div>
+                    <div class="vitals-container">
+                        <div class="vital-item">
+                            <div class="vital-label">Oxygen Level</div>
+                            <div>97%</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Temperature</div>
+                            <div>36.8°C</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Body Composition Card -->
+                <div class="card vitals-card holographic">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-weight"></i> Body Composition</h2>
+                        <span class="card-status normal">Healthy</span>
+                    </div>
+                    <div class="card-value">72.5 <span class="unit">kg</span></div>
+                    <div class="vitals-container">
+                        <div class="vital-item">
+                            <div class="vital-label">BMI</div>
+                            <div>23.1</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Body Fat</div>
+                            <div>18.5%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Tracking Card -->
+                <div class="card activity-card holographic">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-running"></i> Physical Activity</h2>
+                        <span class="card-status normal">Active</span>
+                    </div>
+                    <div class="card-value">8,542 <span class="unit">steps</span></div>
+                    <p>Goal: 10,000 steps (85% achieved)</p>
+                    <div class="activity-chart">
+                        <div class="chart-bar" data-value="2.1k" style="height: 40%;"></div>
+                        <div class="chart-bar" data-value="1.8k" style="height: 35%;"></div>
+                        <div class="chart-bar" data-value="2.5k" style="height: 50%;"></div>
+                        <div class="chart-bar" data-value="2.2k" style="height: 42%;"></div>
+                        <div class="chart-bar" data-value="3.5k" style="height: 70%;"></div>
+                        <div class="chart-bar" data-value="4.2k" style="height: 85%;"></div>
+                        <div class="chart-bar" data-value="2.8k" style="height: 55%;"></div>
+                    </div>
+                </div>
+
+                <!-- Sleep Quality Card -->
+                <div class="card sleep-card holographic">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-bed"></i> Sleep Quality</h2>
+                        <span class="card-status normal">Good</span>
+                    </div>
+                    <div class="card-value">7.2 <span class="unit">hrs</span></div>
+                    <p>Deep Sleep: 2.1hrs (29%)</p>
+                    <p>REM Sleep: 1.8hrs (25%)</p>
+                </div>
+
+                <!-- Predictive Insights Card -->
+                <div class="card predictive-card holographic">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-brain"></i> Predictive Health Insights</h2>
+                    </div>
+                    <p><i class="fas fa-check-circle success-icon"></i> Stress levels predicted to be normal tomorrow</p>
+                    <p><i class="fas fa-exclamation-triangle warning-icon"></i> Mild dehydration risk detected - increase water intake</p>
+                    <p><i class="fas fa-chart-line success-icon"></i> Sleep pattern improving - continue current routine</p>
+                    <p><i class="fas fa-bell warning-icon"></i> Blood pressure may rise slightly in evening - monitor after dinner</p>
+                </div>
+
+                <!-- Alerts & Notifications Card -->
+                <div class="card alerts-card holographic">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-bell"></i> Alerts & Notifications</h2>
+                    </div>
+                    <div class="alert-item warning">
+                        <p><strong>Blood Pressure Alert</strong></p>
+                        <p>Diastolic reading elevated by 8% compared to baseline</p>
+                        <div class="alert-time">2 hours ago</div>
+                    </div>
+                    <div class="alert-item normal">
+                        <p><strong>Medication Reminder</strong></p>
+                        <p>Take daily vitamins in 30 minutes</p>
+                        <div class="alert-time">Today, 12:30 PM</div>
+                    </div>
+                    <div class="alert-item normal">
+                        <p><strong>Sync Complete</strong></p>
+                        <p>Data synchronized with City General Hospital</p>
+                        <div class="alert-time">Today, 10:15 AM</div>
+                    </div>
+                    <div class="alert-item normal">
+                        <p><strong>Emergency Contact Updated</strong></p>
+                        <p>Dr. Chen notified of your recent readings</p>
+                        <div class="alert-time">Yesterday, 5:45 PM</div>
+                    </div>
+                </div>
+
+                <!-- Wellness Recommendations Card -->
+                <div class="card recommendations-card holographic">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-spa"></i> Personalized Recommendations</h2>
+                    </div>
+                    <div class="recommendations-container">
+                        <div class="recommendation-item">
+                            <h3><i class="fas fa-water"></i> Hydration</h3>
+                            <p>Drink 500ml water in next hour to maintain optimal hydration levels.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h3><i class="fas fa-walking"></i> Activity</h3>
+                            <p>Take a 15-minute walk after lunch to improve digestion and circulation.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h3><i class="fas fa-moon"></i> Sleep</h3>
+                            <p>Maintain consistent bedtime (10:30 PM) to improve sleep quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other sections (hidden by default) -->
+            <section class="content-section" id="vitals-content" style="display: none;">
+                <h2>Detailed Vital Signs Analysis</h2>
+
+                <!-- Real-time Heart Rate Monitor -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-heartbeat"></i> Real-time Heart Rate Monitor</h3>
+                        <span class="card-status normal">Live</span>
+                    </div>
+                    <div class="card-value" id="live-heart-rate">72 <span class="unit">bpm</span></div>
+                    <div class="vitals-container">
+                        <div class="vital-item">
+                            <div class="vital-label">Current Zone</div>
+                            <div id="heart-zone">Fat Burn</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Variability</div>
+                            <div id="hrv">42 ms</div>
+                        </div>
+                    </div>
+                    <div class="activity-chart" id="heart-rate-chart" style="height: 150px;">
+                        <div class="chart-bar" style="height: 65%;"></div>
+                        <div class="chart-bar" style="height: 72%;"></div>
+                        <div class="chart-bar" style="height: 68%;"></div>
+                        <div class="chart-bar" style="height: 75%;"></div>
+                        <div class="chart-bar" style="height: 70%;"></div>
+                        <div class="chart-bar" style="height: 78%;"></div>
+                        <div class="chart-bar" style="height: 73%;"></div>
+                        <div class="chart-bar" style="height: 80%;"></div>
+                        <div class="chart-bar" style="height: 76%;"></div>
+                        <div class="chart-bar" style="height: 82%;"></div>
+                    </div>
+                </div>
+
+                <!-- Blood Pressure Analysis -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-tint"></i> Blood Pressure Analysis</h3>
+                        <span class="card-status warning">Monitor</span>
+                    </div>
+                    <div class="card-value" id="live-bp">128/82 <span class="unit">mmHg</span></div>
+                    <div class="vitals-container">
+                        <div class="vital-item">
+                            <div class="vital-label">Pulse Pressure</div>
+                            <div id="pulse-pressure">46 mmHg</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">MAP</div>
+                            <div id="map">97 mmHg</div>
+                        </div>
+                    </div>
+                    <div class="activity-chart" id="bp-chart" style="height: 150px;">
+                        <div class="chart-bar" style="height: 60%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 65%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 58%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 72%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 68%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 75%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 70%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 78%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 73%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 80%; background: linear-gradient(to top, var(--coral), var(--light-coral));"></div>
+                    </div>
+                </div>
+
+                <!-- Respiratory Rate & Oxygen -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-lungs"></i> Respiratory & Oxygen Saturation</h3>
+                        <span class="card-status normal">Optimal</span>
+                    </div>
+                    <div class="card-value" id="live-resp-rate">16 <span class="unit">breaths/min</span></div>
+                    <div class="vitals-container">
+                        <div class="vital-item">
+                            <div class="vital-label">SpO2</div>
+                            <div id="spo2">97%</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Respiratory Volume</div>
+                            <div id="resp-volume">450 ml</div>
+                        </div>
+                    </div>
+                    <div class="activity-chart" id="resp-chart" style="height: 150px;">
+                        <div class="chart-bar" style="height: 55%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 60%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 58%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 62%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 57%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 64%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 59%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 66%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 61%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                        <div class="chart-bar" style="height: 68%; background: linear-gradient(to top, var(--teal), var(--light-coral));"></div>
+                    </div>
+                </div>
+
+                <!-- Temperature & Metabolic Rate -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-thermometer-half"></i> Temperature & Metabolism</h3>
+                        <span class="card-status normal">Stable</span>
+                    </div>
+                    <div class="card-value" id="live-temp">36.8 <span class="unit">°C</span></div>
+                    <div class="vitals-container">
+                        <div class="vital-item">
+                            <div class="vital-label">BMR</div>
+                            <div id="bmr">1,650 kcal</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Core Temp</div>
+                            <div id="core-temp">37.1°C</div>
+                        </div>
+                    </div>
+                    <div class="activity-chart" id="temp-chart" style="height: 150px;">
+                        <div class="chart-bar" style="height: 45%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 48%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 46%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 50%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 47%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 52%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 49%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 54%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 51%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                        <div class="chart-bar" style="height: 56%; background: linear-gradient(to top, var(--coral), var(--teal));"></div>
+                    </div>
+                </div>
+
+                <!-- Vital Signs History -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-history"></i> 24-Hour Vital Signs History</h3>
+                    </div>
+                    <div class="vitals-container">
+                        <div class="vital-item">
+                            <div class="vital-label">Peak Heart Rate</div>
+                            <div id="peak-hr">142 bpm (Exercise)</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Lowest BP</div>
+                            <div id="lowest-bp">115/75 mmHg</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Avg Temperature</div>
+                            <div id="avg-temp">36.7°C</div>
+                        </div>
+                        <div class="vital-item">
+                            <div class="vital-label">Sleep HR Drop</div>
+                            <div id="sleep-hr-drop">-28 bpm</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Health Analytics section -->
+            <section class="content-section" id="analytics-content" style="display: none;">
+                <h2>Health Analytics & Trends</h2>
+
+                <!-- 7-Day Health Trends -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-chart-line"></i> 7-Day Health Trends</h3>
+                    </div>
+                    <div class="analytics-grid">
+                        <!-- Heart Rate Trend -->
+                        <div class="trend-item">
+                            <div class="trend-header">
+                                <h4><i class="fas fa-heart"></i> Heart Rate</h4>
+                                <span class="trend-change positive">-3 bpm</span>
+                            </div>
+                            <div class="trend-bar">
+                                <div class="trend-fill" style="width: 85%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                            </div>
+                            <p class="trend-insight">Average improvement over 7 days</p>
+                        </div>
+
+                        <!-- Blood Pressure Trend -->
+                        <div class="trend-item">
+                            <div class="trend-header">
+                                <h4><i class="fas fa-tint"></i> Blood Pressure</h4>
+                                <span class="trend-change negative">+5 mmHg</span>
+                            </div>
+                            <div class="trend-bar">
+                                <div class="trend-fill" style="width: 72%; background: linear-gradient(to right, var(--coral), var(--light-coral));"></div>
+                            </div>
+                            <p class="trend-insight">Systolic pressure increased slightly</p>
+                        </div>
+
+                        <!-- Sleep Quality Trend -->
+                        <div class="trend-item">
+                            <div class="trend-header">
+                                <h4><i class="fas fa-bed"></i> Sleep Quality</h4>
+                                <span class="trend-change positive">+12%</span>
+                            </div>
+                            <div class="trend-bar">
+                                <div class="trend-fill" style="width: 91%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                            </div>
+                            <p class="trend-insight">Sleep efficiency improving</p>
+                        </div>
+
+                        <!-- Activity Trend -->
+                        <div class="trend-item">
+                            <div class="trend-header">
+                                <h4><i class="fas fa-running"></i> Physical Activity</h4>
+                                <span class="trend-change positive">+8%</span>
+                            </div>
+                            <div class="trend-bar">
+                                <div class="trend-fill" style="width: 78%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                            </div>
+                            <p class="trend-insight">92% of weekly goals achieved</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Correlations & Insights -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-brain"></i> Health Correlations & Predictive Insights</h3>
+                    </div>
+                    <div class="correlations-container">
+                        <div class="correlation-item">
+                            <div class="correlation-strength" style="width: 85%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                            <div class="correlation-info">
+                                <h4>Exercise & Sleep Quality</h4>
+                                <p>85% correlation - Higher physical activity leads to better sleep patterns</p>
+                            </div>
+                        </div>
+
+                        <div class="correlation-item">
+                            <div class="correlation-strength" style="width: 72%; background: linear-gradient(to right, var(--coral), var(--light-coral));"></div>
+                            <div class="correlation-info">
+                                <h4>Stress & Heart Rate</h4>
+                                <p>72% correlation - Elevated stress levels increase resting heart rate</p>
+                            </div>
+                        </div>
+
+                        <div class="correlation-item">
+                            <div class="correlation-strength" style="width: 68%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                            <div class="correlation-info">
+                                <h4>Hydration & Energy</h4>
+                                <p>68% correlation - Better hydration improves daily energy levels</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Predictive Health Models -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-robot"></i> AI Predictive Health Models</h3>
+                    </div>
+                    <div class="predictions-grid">
+                        <div class="prediction-card">
+                            <div class="prediction-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h4>Cardiovascular Risk</h4>
+                                <div class="risk-meter">
+                                    <div class="risk-fill low-risk" style="width: 25%;"></div>
+                                </div>
+                                <p class="risk-level">Low Risk</p>
+                                <p class="prediction-text">Based on current trends, cardiovascular health is stable with low risk indicators.</p>
+                            </div>
+                        </div>
+
+                        <div class="prediction-card">
+                            <div class="prediction-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h4>Mental Wellness</h4>
+                                <div class="risk-meter">
+                                    <div class="risk-fill medium-risk" style="width: 45%;"></div>
+                                </div>
+                                <p class="risk-level">Moderate</p>
+                                <p class="prediction-text">Stress patterns detected. Consider mindfulness activities for better mental wellness.</p>
+                            </div>
+                        </div>
+
+                        <div class="prediction-card">
+                            <div class="prediction-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h4>Sleep Optimization</h4>
+                                <div class="risk-meter">
+                                    <div class="risk-fill low-risk" style="width: 15%;"></div>
+                                </div>
+                                <p class="risk-level">Optimal</p>
+                                <p class="prediction-text">Sleep patterns are improving. Continue current bedtime routine for best results.</p>
+                            </div>
+                        </div>
+
+                        <div class="prediction-card">
+                            <div class="prediction-icon">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h4>Metabolic Health</h4>
+                                <div class="risk-meter">
+                                    <div class="risk-fill medium-risk" style="width: 35%;"></div>
+                                </div>
+                                <p class="risk-level">Good</p>
+                                <p class="prediction-text">Metabolic markers are within healthy ranges. Maintain current diet and exercise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Health Report -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-file-alt"></i> Weekly Health Report</h3>
+                    </div>
+                    <div class="report-summary">
+                        <div class="report-stat">
+                            <div class="stat-value">94%</div>
+                            <div class="stat-label">Health Score</div>
+                        </div>
+                        <div class="report-stat">
+                            <div class="stat-value">7.8h</div>
+                            <div class="stat-label">Avg Sleep</div>
+                        </div>
+                        <div class="report-stat">
+                            <div class="stat-value">12,450</div>
+                            <div class="stat-label">Steps/Day</div>
+                        </div>
+                        <div class="report-stat">
+                            <div class="stat-value">72</div>
+                            <div class="stat-label">Avg HR</div>
+                        </div>
+                    </div>
+                    <div class="report-insights">
+                        <h4>Key Insights This Week:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle success-icon"></i> Consistent exercise routine showing positive cardiovascular benefits</li>
+                            <li><i class="fas fa-exclamation-triangle warning-icon"></i> Blood pressure slightly elevated on workdays - monitor stress levels</li>
+                            <li><i class="fas fa-chart-line success-icon"></i> Sleep quality improved by 15% compared to last week</li>
+                            <li><i class="fas fa-trophy success-icon"></i> Achieved 95% of weekly activity goals</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="alerts-content" style="display: none;">
+                <h2>Alerts & Notifications Center</h2>
+
+                <!-- Active Alerts -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-bell"></i> Active Alerts</h3>
+                        <span class="alert-count">3 Active</span>
+                    </div>
+                    <div class="alerts-container">
+                        <div class="alert-item critical">
+                            <p><strong>Critical: Irregular Heart Rhythm Detected</strong></p>
+                            <p>Atrial fibrillation pattern detected. Please consult your cardiologist immediately.</p>
+                            <div class="alert-time">Just now</div>
+                            <div class="alert-actions">
+                                <button class="alert-btn dismiss" onclick="dismissAlert('heart-rhythm')">Dismiss</button>
+                                <button class="alert-btn action" onclick="contactDoctor('heart-rhythm')">Contact Doctor</button>
+                            </div>
+                        </div>
+
+                        <div class="alert-item warning">
+                            <p><strong>Blood Pressure Alert</strong></p>
+                            <p>Diastolic reading elevated by 12% compared to baseline (128/89 mmHg)</p>
+                            <div class="alert-time">2 hours ago</div>
+                            <div class="alert-actions">
+                                <button class="alert-btn dismiss" onclick="dismissAlert('bp-alert')">Dismiss</button>
+                                <button class="alert-btn action" onclick="viewDetails('bp-alert')">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="alert-item info">
+                            <p><strong>Medication Reminder</strong></p>
+                            <p>Time to take your daily blood pressure medication (Lisinopril 10mg)</p>
+                            <div class="alert-time">30 minutes ago</div>
+                            <div class="alert-actions">
+                                <button class="alert-btn dismiss" onclick="dismissAlert('med-reminder')">Dismiss</button>
+                                <button class="alert-btn action" onclick="markTaken('med-reminder')">Mark as Taken</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification History -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-history"></i> Notification History</h3>
+                        <button class="clear-btn" onclick="clearHistory()">Clear All</button>
+                    </div>
+                    <div class="alerts-container">
+                        <div class="alert-item normal">
+                            <p><strong>Sync Complete</strong></p>
+                            <p>Data synchronized with City General Hospital - 1,247 records updated</p>
+                            <div class="alert-time">Today, 10:15 AM</div>
+                        </div>
+
+                        <div class="alert-item normal">
+                            <p><strong>Emergency Contact Updated</strong></p>
+                            <p>Dr. Sarah Johnson notified of your recent vital signs readings</p>
+                            <div class="alert-time">Yesterday, 5:45 PM</div>
+                        </div>
+
+                        <div class="alert-item success">
+                            <p><strong>Goal Achieved!</strong></p>
+                            <p>Congratulations! You've completed your daily 10,000 steps goal</p>
+                            <div class="alert-time">Yesterday, 8:30 PM</div>
+                        </div>
+
+                        <div class="alert-item warning">
+                            <p><strong>Hydration Reminder</strong></p>
+                            <p>You've been inactive for 2 hours. Remember to stay hydrated!</p>
+                            <div class="alert-time">2 days ago</div>
+                        </div>
+
+                        <div class="alert-item info">
+                            <p><strong>Weekly Health Report Available</strong></p>
+                            <p>Your comprehensive health summary for this week is ready to view</p>
+                            <div class="alert-time">3 days ago</div>
+                        </div>
+
+                        <div class="alert-item normal">
+                            <p><strong>Device Connected</strong></p>
+                            <p>NeoWatch Pro successfully connected and synced</p>
+                            <div class="alert-time">3 days ago</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alert Settings -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-cog"></i> Alert Preferences</h3>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Critical Health Alerts</h4>
+                                <p>Irregular heart rhythms, high blood pressure spikes</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="criticalAlerts" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Medication Reminders</h4>
+                                <p>Daily medication schedules and refill alerts</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="medicationAlerts" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Goal Achievement</h4>
+                                <p>Celebrate when you reach your health goals</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="goalAlerts" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Sync Notifications</h4>
+                                <p>Data synchronization status and updates</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="syncAlerts" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Emergency Contact Alerts</h4>
+                                <p>Notify emergency contacts of critical situations</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="emergencyAlerts" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hospital Sync section -->
+            <section class="content-section" id="hospital-content" style="display: none;">
+                <h2>Hospital Data Synchronization</h2>
+
+                <!-- Connected Hospitals Overview -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-hospital"></i> Connected Healthcare Facilities</h3>
+                        <button class="sync-btn" id="addHospitalBtn">
+                            <i class="fas fa-plus"></i> Add Hospital
+                        </button>
+                    </div>
+                    <div class="hospitals-grid">
+                        <div class="hospital-card connected">
+                            <div class="hospital-header">
+                                <div class="hospital-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="hospital-info">
+                                    <h4>City General Hospital</h4>
+                                    <p>Primary Care Facility</p>
+                                </div>
+                                <div class="hospital-status">
+                                    <span class="status-indicator online"></span>
+                                    <span class="status-text">Connected</span>
+                                </div>
+                            </div>
+                            <div class="hospital-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Last Sync:</span>
+                                    <span class="detail-value" id="city-general-last-sync">2 minutes ago</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Records Shared:</span>
+                                    <span class="detail-value">1,247</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Data Size:</span>
+                                    <span class="detail-value">2.4 GB</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <button class="action-btn sync-now" onclick="syncHospital('city-general')">
+                                    <i class="fas fa-sync"></i> Sync Now
+                                </button>
+                                <button class="action-btn view-records" onclick="viewHospitalRecords('city-general')">
+                                    <i class="fas fa-file-medical"></i> View Records
+                                </button>
+                                <button class="action-btn disconnect" onclick="disconnectHospital('city-general')">
+                                    <i class="fas fa-unlink"></i> Disconnect
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="hospital-card connected">
+                            <div class="hospital-header">
+                                <div class="hospital-icon">
+                                    <i class="fas fa-clinic-medical"></i>
+                                </div>
+                                <div class="hospital-info">
+                                    <h4>Metro Heart Center</h4>
+                                    <p>Cardiology Specialist</p>
+                                </div>
+                                <div class="hospital-status">
+                                    <span class="status-indicator online"></span>
+                                    <span class="status-text">Connected</span>
+                                </div>
+                            </div>
+                            <div class="hospital-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Last Sync:</span>
+                                    <span class="detail-value" id="metro-heart-last-sync">15 minutes ago</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Records Shared:</span>
+                                    <span class="detail-value">892</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Data Size:</span>
+                                    <span class="detail-value">1.8 GB</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <button class="action-btn sync-now" onclick="syncHospital('metro-heart')">
+                                    <i class="fas fa-sync"></i> Sync Now
+                                </button>
+                                <button class="action-btn view-records" onclick="viewHospitalRecords('metro-heart')">
+                                    <i class="fas fa-file-medical"></i> View Records
+                                </button>
+                                <button class="action-btn disconnect" onclick="disconnectHospital('metro-heart')">
+                                    <i class="fas fa-unlink"></i> Disconnect
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="hospital-card pending">
+                            <div class="hospital-header">
+                                <div class="hospital-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                                <div class="hospital-info">
+                                    <h4>Add New Hospital</h4>
+                                    <p>Connect additional facilities</p>
+                                </div>
+                                <div class="hospital-status">
+                                    <span class="status-indicator offline"></span>
+                                    <span class="status-text">Not Connected</span>
+                                </div>
+                            </div>
+                            <div class="hospital-details">
+                                <p>Click to search and connect to new healthcare facilities in your area.</p>
+                            </div>
+                            <div class="hospital-actions">
+                                <button class="action-btn connect-new" onclick="connectNewHospital()">
+                                    <i class="fas fa-search"></i> Find Hospitals
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Synchronization Status -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-exchange-alt"></i> Data Synchronization Status</h3>
+                    </div>
+                    <div class="sync-status-grid">
+                        <div class="sync-metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Sync Frequency</h4>
+                                <p>Real-time + Daily Backup</p>
+                            </div>
+                        </div>
+
+                        <div class="sync-metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Security Level</h4>
+                                <p>HIPAA Compliant Encryption</p>
+                            </div>
+                        </div>
+
+                        <div class="sync-metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Data Transferred</h4>
+                                <p id="total-data-transferred">4.2 GB</p>
+                            </div>
+                        </div>
+
+                        <div class="sync-metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Success Rate</h4>
+                                <p id="sync-success-rate">99.8%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Sync Progress -->
+                    <div class="sync-progress" id="syncProgress" style="display: none;">
+                        <h4>Active Synchronization</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+                        </div>
+                        <p id="syncStatusText">Preparing data transfer...</p>
+                    </div>
+                </div>
+
+                <!-- Medical Records Access -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-file-medical"></i> Medical Records Access</h3>
+                    </div>
+                    <div class="records-grid">
+                        <div class="record-category">
+                            <div class="category-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="category-info">
+                                <h4>Vital Signs History</h4>
+                                <p>Complete cardiovascular monitoring data</p>
+                                <span class="record-count">2,341 records</span>
+                            </div>
+                            <button class="access-btn" onclick="accessRecords('vitals')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </div>
+
+                        <div class="record-category">
+                            <div class="category-icon">
+                                <i class="fas fa-prescription-bottle"></i>
+                            </div>
+                            <div class="category-info">
+                                <h4>Medications & Prescriptions</h4>
+                                <p>Current and historical medication records</p>
+                                <span class="record-count">156 prescriptions</span>
+                            </div>
+                            <button class="access-btn" onclick="accessRecords('medications')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </div>
+
+                        <div class="record-category">
+                            <div class="category-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <div class="category-info">
+                                <h4>Lab Results & Tests</h4>
+                                <p>Blood work, imaging, and diagnostic results</p>
+                                <span class="record-count">89 reports</span>
+                            </div>
+                            <button class="access-btn" onclick="accessRecords('lab-results')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </div>
+
+                        <div class="record-category">
+                            <div class="category-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="category-info">
+                                <h4>Appointments & Visits</h4>
+                                <p>Scheduled and completed medical visits</p>
+                                <span class="record-count">43 appointments</span>
+                            </div>
+                            <button class="access-btn" onclick="accessRecords('appointments')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointment Scheduling -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-calendar-plus"></i> Appointment Scheduling</h3>
+                        <button class="schedule-btn" onclick="scheduleAppointment()">
+                            <i class="fas fa-plus"></i> Schedule New
+                        </button>
+                    </div>
+                    <div class="appointments-list">
+                        <div class="appointment-item upcoming">
+                            <div class="appointment-date">
+                                <div class="date">Dec 15</div>
+                                <div class="time">2:30 PM</div>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>Annual Physical Exam</h4>
+                                <p>City General Hospital - Dr. Sarah Johnson</p>
+                                <span class="appointment-type">Primary Care</span>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="action-btn reschedule" onclick="rescheduleAppointment('annual-physical')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn cancel" onclick="cancelAppointment('annual-physical')">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="appointment-item upcoming">
+                            <div class="appointment-date">
+                                <div class="date">Dec 22</div>
+                                <div class="time">10:00 AM</div>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>Cardiology Follow-up</h4>
+                                <p>Metro Heart Center - Dr. Michael Chen</p>
+                                <span class="appointment-type">Specialist</span>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="action-btn reschedule" onclick="rescheduleAppointment('cardiology-followup')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn cancel" onclick="cancelAppointment('cardiology-followup')">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="appointment-item completed">
+                            <div class="appointment-date">
+                                <div class="date">Nov 28</div>
+                                <div class="time">3:15 PM</div>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>Blood Work Review</h4>
+                                <p>City General Hospital - Dr. Sarah Johnson</p>
+                                <span class="appointment-type">Lab Results</span>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status completed">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Access Settings -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-exclamation-triangle"></i> Emergency Access Settings</h3>
+                    </div>
+                    <div class="emergency-settings">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Emergency Data Sharing</h4>
+                                <p>Automatically share critical health data with emergency services</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="emergencySharing" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Emergency Contact Override</h4>
+                                <p>Allow emergency services to access full medical history</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="emergencyOverride" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Allergen Information</h4>
+                                <p>Share critical allergy information with all connected facilities</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="allergenSharing" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Assistant section -->
+            <section class="content-section" id="ai-content" style="display: none;">
+                <h2 class="ai-assistant-title">
+                    <i class="fas fa-brain"></i>
+                    <span>AI Health Assistant</span>
+                    <div class="ai-status-indicator">
+                        <div class="status-pulse"></div>
+                        <span>Smart & Proactive</span>
+                    </div>
+                </h2>
+
+                <!-- Proactive Health Alerts -->
+                <div class="card ai-card alerts holographic">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-bell"></i>
+                            Proactive Health Alerts
+                        </h3>
+                        <div class="alert-count" id="alert-count">0 Active</div>
+                    </div>
+                    <div class="alerts-container" id="proactive-alerts-container">
+                        <div class="no-alerts">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>All systems monitoring normally. No alerts at this time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Health Goals -->
+                <div class="card ai-card goals holographic">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-target"></i>
+                            Daily Health Goals
+                        </h3>
+                        <div class="goals-progress" id="goals-overall">0/4 Complete</div>
+                    </div>
+                    <div class="goals-container" id="daily-goals-container">
+                        <!-- Goals will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- AI Health Coach -->
+                <div class="card ai-card coach holographic">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-user-md"></i>
+                            AI Health Coach
+                        </h3>
+                        <div class="coach-status">Ready to Guide</div>
+                    </div>
+                    <div class="coach-options">
+                        <button class="coach-btn" onclick="startCoachingSession('breathing')">
+                            <i class="fas fa-wind"></i>
+                            Breathing Exercise
+                        </button>
+                        <button class="coach-btn" onclick="startCoachingSession('meditation')">
+                            <i class="fas fa-om"></i>
+                            Mindfulness Meditation
+                        </button>
+                        <button class="coach-btn" onclick="startCoachingSession('stretching')">
+                            <i class="fas fa-child"></i>
+                            Quick Stretch
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Emergency Response Hub -->
+                <div class="card ai-card emergency holographic">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Emergency Response Hub
+                        </h3>
+                        <div class="emergency-status">System Ready</div>
+                    </div>
+                    <div class="emergency-actions">
+                        <button class="emergency-btn primary" onclick="accessEmergencyContacts()">
+                            <i class="fas fa-phone"></i>
+                            Emergency Contacts
+                        </button>
+                        <button class="emergency-btn secondary" onclick="startEmergencyTimer()">
+                            <i class="fas fa-clock"></i>
+                            Emergency Timer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Wellness Challenges -->
+                <div class="card ai-card challenges holographic">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-trophy"></i>
+                            Wellness Challenges
+                        </h3>
+                        <div class="points-display" id="challenge-points">0 Points</div>
+                    </div>
+                    <div class="challenges-container" id="challenges-container">
+                        <!-- Challenges will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Smart Health Insights -->
+                <div class="card ai-card insights holographic">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-lightbulb"></i>
+                            Smart Health Insights
+                        </h3>
+                        <button class="refresh-btn" onclick="generateSmartInsights()">
+                            <i class="fas fa-sync"></i>
+                            Refresh
+                        </button>
+                    </div>
+                    <div class="insights-container" id="smart-insights-container">
+                        <div class="no-insights">
+                            <i class="fas fa-brain"></i>
+                            <p>Analyzing your health patterns... Insights will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Devices section -->
+            <section class="content-section" id="mobile-content" style="display: none;">
+                <h2>Mobile Devices & Wearables</h2>
+
+                <!-- Connected Devices Overview -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-mobile-alt"></i> Connected Devices</h3>
+                        <button class="sync-btn" onclick="pairNewDevice()">
+                            <i class="fas fa-plus"></i> Pair Device
+                        </button>
+                    </div>
+                    <div class="devices-grid">
+                        <div class="device-card connected">
+                            <div class="device-header">
+                                <div class="device-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="device-info">
+                                    <h4>NeoWatch Pro</h4>
+                                    <p>Smartwatch - Primary Device</p>
+                                </div>
+                                <div class="device-status">
+                                    <span class="status-indicator online"></span>
+                                    <span class="status-text">Connected</span>
+                                </div>
+                            </div>
+                            <div class="device-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Battery:</span>
+                                    <span class="detail-value" id="neowatch-battery">87%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Last Sync:</span>
+                                    <span class="detail-value" id="neowatch-last-sync">5 minutes ago</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Storage:</span>
+                                    <span class="detail-value">2.1 GB used</span>
+                                </div>
+                            </div>
+                            <div class="device-actions">
+                                <button class="action-btn sync-now" onclick="syncDevice('neowatch')">
+                                    <i class="fas fa-sync"></i> Sync
+                                </button>
+                                <button class="action-btn settings" onclick="deviceSettings('neowatch')">
+                                    <i class="fas fa-cog"></i> Settings
+                                </button>
+                                <button class="action-btn disconnect" onclick="disconnectDevice('neowatch')">
+                                    <i class="fas fa-unlink"></i> Disconnect
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="device-card connected">
+                            <div class="device-header">
+                                <div class="device-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="device-info">
+                                    <h4>iPhone 15 Pro</h4>
+                                    <p>Mobile Phone - Backup Device</p>
+                                </div>
+                                <div class="device-status">
+                                    <span class="status-indicator online"></span>
+                                    <span class="status-text">Connected</span>
+                                </div>
+                            </div>
+                            <div class="device-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Battery:</span>
+                                    <span class="detail-value" id="iphone-battery">92%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Last Sync:</span>
+                                    <span class="detail-value" id="iphone-last-sync">2 minutes ago</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Storage:</span>
+                                    <span class="detail-value">8.7 GB used</span>
+                                </div>
+                            </div>
+                            <div class="device-actions">
+                                <button class="action-btn sync-now" onclick="syncDevice('iphone')">
+                                    <i class="fas fa-sync"></i> Sync
+                                </button>
+                                <button class="action-btn settings" onclick="deviceSettings('iphone')">
+                                    <i class="fas fa-cog"></i> Settings
+                                </button>
+                                <button class="action-btn disconnect" onclick="disconnectDevice('iphone')">
+                                    <i class="fas fa-unlink"></i> Disconnect
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="device-card connected">
+                            <div class="device-header">
+                                <div class="device-icon">
+                                    <i class="fas fa-headphones"></i>
+                                </div>
+                                <div class="device-info">
+                                    <h4>NeoBuds Pro</h4>
+                                    <p>Wireless Earbuds - Audio Device</p>
+                                </div>
+                                <div class="device-status">
+                                    <span class="status-indicator online"></span>
+                                    <span class="status-text">Connected</span>
+                                </div>
+                            </div>
+                            <div class="device-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Battery:</span>
+                                    <span class="detail-value" id="neobuds-battery">78%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Last Sync:</span>
+                                    <span class="detail-value" id="neobuds-last-sync">1 hour ago</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Firmware:</span>
+                                    <span class="detail-value">v2.1.4</span>
+                                </div>
+                            </div>
+                            <div class="device-actions">
+                                <button class="action-btn sync-now" onclick="syncDevice('neobuds')">
+                                    <i class="fas fa-sync"></i> Sync
+                                </button>
+                                <button class="action-btn settings" onclick="deviceSettings('neobuds')">
+                                    <i class="fas fa-cog"></i> Settings
+                                </button>
+                                <button class="action-btn disconnect" onclick="disconnectDevice('neobuds')">
+                                    <i class="fas fa-unlink"></i> Disconnect
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="device-card pending">
+                            <div class="device-header">
+                                <div class="device-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                                <div class="device-info">
+                                    <h4>Add New Device</h4>
+                                    <p>Connect additional wearables</p>
+                                </div>
+                                <div class="device-status">
+                                    <span class="status-indicator offline"></span>
+                                    <span class="status-text">Not Connected</span>
+                                </div>
+                            </div>
+                            <div class="device-details">
+                                <p>Click to search and pair new devices in your area.</p>
+                            </div>
+                            <div class="device-actions">
+                                <button class="action-btn connect-new" onclick="pairNewDevice()">
+                                    <i class="fas fa-search"></i> Find Devices
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device Health & Diagnostics -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-stethoscope"></i> Device Health & Diagnostics</h3>
+                    </div>
+                    <div class="diagnostics-grid">
+                        <div class="diagnostic-item">
+                            <div class="diagnostic-icon">
+                                <i class="fas fa-battery-half"></i>
+                            </div>
+                            <div class="diagnostic-info">
+                                <h4>Battery Health</h4>
+                                <p>Overall battery performance across all devices</p>
+                                <div class="health-score">
+                                    <div class="health-bar" style="width: 92%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                                </div>
+                                <span class="health-text">Excellent (92%)</span>
+                            </div>
+                        </div>
+
+                        <div class="diagnostic-item">
+                            <div class="diagnostic-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="diagnostic-info">
+                                <h4>Connectivity Status</h4>
+                                <p>Bluetooth and Wi-Fi connection stability</p>
+                                <div class="health-score">
+                                    <div class="health-bar" style="width: 88%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                                </div>
+                                <span class="health-text">Good (88%)</span>
+                            </div>
+                        </div>
+
+                        <div class="diagnostic-item">
+                            <div class="diagnostic-icon">
+                                <i class="fas fa-sensor"></i>
+                            </div>
+                            <div class="diagnostic-info">
+                                <h4>Sensor Accuracy</h4>
+                                <p>Heart rate, SpO2, and motion sensor calibration</p>
+                                <div class="health-score">
+                                    <div class="health-bar" style="width: 95%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                                </div>
+                                <span class="health-text">Excellent (95%)</span>
+                            </div>
+                        </div>
+
+                        <div class="diagnostic-item">
+                            <div class="diagnostic-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="diagnostic-info">
+                                <h4>Data Security</h4>
+                                <p>Encryption and secure data transmission</p>
+                                <div class="health-score">
+                                    <div class="health-bar" style="width: 98%; background: linear-gradient(to right, var(--teal), var(--light-coral));"></div>
+                                </div>
+                                <span class="health-text">Optimal (98%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Synchronization Status -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-exchange-alt"></i> Data Synchronization</h3>
+                    </div>
+                    <div class="sync-metrics">
+                        <div class="sync-metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Sync Frequency</h4>
+                                <p>Real-time + Auto-sync every 15 min</p>
+                            </div>
+                        </div>
+
+                        <div class="sync-metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Data Transferred</h4>
+                                <p id="device-data-transferred">1.2 GB</p>
+                            </div>
+                        </div>
+
+                        <div class="sync-metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Success Rate</h4>
+                                <p id="device-sync-success">99.7%</p>
+                            </div>
+                        </div>
+
+                        <div class="sync-metric">
+                            <div class="metric-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h4>Cloud Backup</h4>
+                                <p>Last backup: 2 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Sync Progress -->
+                    <div class="sync-progress" id="deviceSyncProgress" style="display: none;">
+                        <h4>Device Synchronization</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="deviceProgressFill" style="width: 0%;"></div>
+                        </div>
+                        <p id="deviceSyncStatusText">Preparing device sync...</p>
+                    </div>
+                </div>
+
+                <!-- Device Permissions & Privacy -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-lock"></i> Device Permissions & Privacy</h3>
+                    </div>
+                    <div class="permissions-list">
+                        <div class="permission-item">
+                            <div class="permission-info">
+                                <h4>Location Access</h4>
+                                <p>Used for activity tracking and emergency services</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="locationPermission" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="permission-item">
+                            <div class="permission-info">
+                                <h4>Health Data Sharing</h4>
+                                <p>Share vital signs with connected healthcare providers</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="healthDataPermission" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="permission-item">
+                            <div class="permission-info">
+                                <h4>Emergency Access</h4>
+                                <p>Allow emergency services to access device data</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="emergencyPermission" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="permission-item">
+                            <div class="permission-info">
+                                <h4>Analytics & Improvements</h4>
+                                <p>Help improve NeoHealth by sharing anonymous usage data</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="analyticsPermission">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Firmware Updates & Maintenance -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-download"></i> Firmware Updates</h3>
+                        <button class="update-btn" onclick="checkForUpdates()">
+                            <i class="fas fa-search"></i> Check Updates
+                        </button>
+                    </div>
+                    <div class="updates-list">
+                        <div class="update-item available">
+                            <div class="update-info">
+                                <h4>NeoWatch Pro Firmware v3.2.1</h4>
+                                <p>Bug fixes, improved battery life, new sleep tracking features</p>
+                                <span class="update-size">12.4 MB</span>
+                            </div>
+                            <button class="update-action-btn" onclick="updateDevice('neowatch')">
+                                <i class="fas fa-download"></i> Update
+                            </button>
+                        </div>
+
+                        <div class="update-item current">
+                            <div class="update-info">
+                                <h4>iPhone App v2.1.4</h4>
+                                <p>Current version - All features up to date</p>
+                                <span class="update-status">Up to date</span>
+                            </div>
+                        </div>
+
+                        <div class="update-item available">
+                            <div class="update-info">
+                                <h4>NeoBuds Pro Firmware v2.1.5</h4>
+                                <p>Enhanced noise cancellation, improved call quality</p>
+                                <span class="update-size">8.7 MB</span>
+                            </div>
+                            <button class="update-action-btn" onclick="updateDevice('neobuds')">
+                                <i class="fas fa-download"></i> Update
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device Activity & Logs -->
+                <div class="card holographic">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-history"></i> Device Activity Logs</h3>
+                        <button class="log-btn" onclick="exportLogs()">
+                            <i class="fas fa-file-export"></i> Export Logs
+                        </button>
+                    </div>
+                    <div class="activity-logs">
+                        <div class="log-entry">
+                            <div class="log-time">Today, 14:32</div>
+                            <div class="log-content">
+                                <i class="fas fa-sync"></i>
+                                <span>NeoWatch Pro synchronized successfully - 247 data points transferred</span>
+                            </div>
+                        </div>
+
+                        <div class="log-entry">
+                            <div class="log-time">Today, 14:15</div>
+                            <div class="log-content">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Heart rate monitoring activated - Normal readings detected</span>
+                            </div>
+                        </div>
+
+                        <div class="log-entry">
+                            <div class="log-time">Today, 13:45</div>
+                            <div class="log-content">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>iPhone backup completed - 1.2 GB data secured</span>
+                            </div>
+                        </div>
+
+                        <div class="log-entry">
+                            <div class="log-time">Today, 12:30</div>
+                            <div class="log-content">
+                                <i class="fas fa-headphones"></i>
+                                <span>NeoBuds connected - Battery level: 78%</span>
+                            </div>
+                        </div>
+
+                        <div class="log-entry">
+                            <div class="log-time">Yesterday, 22:15</div>
+                            <div class="log-content">
+                                <i class="fas fa-bed"></i>
+                                <span>Sleep tracking started - Duration monitoring active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div class="voice-control">
+            <div class="voice-btn" id="voiceBtn">
+                <i class="fas fa-microphone"></i>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>NeoHealth System v3.2 | Secure Medical Data Sync: Active | Last Updated: Today 14:32 | AI Learning: Adaptive Mode</p>
+            <p class="footer-subtext">© 2023 NeoHealth Technologies. All health data is encrypted and HIPAA compliant.</p>
+        </footer>
+    </div>
+
+
+    <div id="connectionModal" class="connection-modal-overlay">
+        <div class="connection-modal holographic">
+            <div class="modal-header">
+                <div class="smartwatch-icon">
+                    <i class="fas fa-watch"></i>
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring delay"></div>
+                </div>
+                <h2>Connect Your Smartwatch</h2>
+                <p>Sync your NeoWatch Pro to unlock full health monitoring features and personalized insights.</p>
+            </div>
+
+            <div class="modal-content">
+                <div class="connection-features">
+                    <div class="feature-item">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Real-time Vital Signs</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-brain"></i>
+                        <span>AI Health Insights</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Emergency Response</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Wellness Challenges</span>
+                    </div>
+                </div>
+
+                <div class="connection-status" id="connectionStatus">
+                    <p>Ready to connect your device...</p>
+                </div>
+
+                <button id="connectBtn" class="connect-btn" onclick="connectSmartwatch()">
+                    <i class="fas fa-link"></i>
+                    <span>Connect Smartwatch</span>
+                </button>
+
+                <div class="connection-progress" id="connectionProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="progressText">Initializing connection...</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <p class="modal-note">Ensure your smartwatch is nearby and Bluetooth is enabled</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
