@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockChain Runner 2D</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="game-header">
+            <h1><i class="fas fa-link"></i> BLOCKCHAIN RUNNER 2D</h1>
+            <p class="subtitle">Navigate the blockchain tunnel. Collect data blocks. Avoid corruption.</p>
+        </header>
+        
+        <div class="game-container">
+            <div class="stats-panel">
+                <div class="stat-box">
+                    <div class="stat-label">SCORE</div>
+                    <div class="stat-value" id="score">0</div>
+                    <div class="stat-sub">Data Blocks Collected</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">WALLET</div>
+                    <div class="stat-value" id="wallet">0 <span class="crypto-unit">BCT</span></div>
+                    <div class="stat-sub">BlockChain Tokens</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">HEALTH</div>
+                    <div class="health-bar">
+                        <div class="health-fill" id="health-fill"></div>
+                    </div>
+                    <div class="stat-sub" id="health-text">100%</div>
+                </div>
+            </div>
+            
+            <div class="game-area">
+                <div class="mining-panel">
+                    <div class="mining-header">
+                        <i class="fas fa-cube"></i> MINING PROGRESS
+                    </div>
+                    <div class="mining-bar">
+                        <div class="mining-fill" id="mining-fill"></div>
+                        <div class="mining-hash" id="mining-hash">000000</div>
+                    </div>
+                    <div class="mining-stats">
+                        <div class="mining-stat">
+                            <span>Speed:</span>
+                            <span id="speed">1x</span>
+                        </div>
+                        <div class="mining-stat">
+                            <span>Chain Length:</span>
+                            <span id="chain-length">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <canvas id="gameCanvas" width="800" height="500"></canvas>
+                
+                <div class="controls-panel">
+                    <div class="control-info">
+                        <h3><i class="fas fa-gamepad"></i> CONTROLS</h3>
+                        <div class="control-keys">
+                            <div class="key"><i class="fas fa-arrow-left"></i> LEFT</div>
+                            <div class="key"><i class="fas fa-arrow-right"></i> RIGHT</div>
+                            <div class="key"><i class="fas fa-space-shuttle"></i> SPACE</div>
+                        </div>
+                        <p class="control-desc">Move node to collect data blocks (blue) and avoid corrupted blocks (red)</p>
+                    </div>
+                    
+                    <div class="game-buttons">
+                        <button id="pauseBtn" class="btn btn-primary">
+                            <i class="fas fa-pause"></i> PAUSE
+                        </button>
+                        <button id="restartBtn" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> RESTART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="transaction-panel">
+                <div class="transaction-header">
+                    <i class="fas fa-exchange-alt"></i> TRANSACTION HISTORY
+                </div>
+                <div class="transaction-list" id="transaction-list">
+                    <div class="transaction">
+                        <span class="tx-hash">0x4a3b...</span>
+                        <span class="tx-type confirmed">Confirmed</span>
+                        <span class="tx-amount">+5 BCT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> GAME INSTRUCTIONS</h3>
+            <div class="instruction-items">
+                <div class="instruction">
+                    <div class="instruction-icon data-block"></div>
+                    <p>Collect <strong>Data Blocks</strong> to earn points and BCT tokens</p>
+                </div>
+                <div class="instruction">
+                    <div class="instruction-icon corrupted-block"></div>
+                    <p>Avoid <strong>Corrupted Blocks</strong> - they reduce health</p>
+                </div>
+                <div class="instruction">
+                    <div class="instruction-icon chain-icon"></div>
+                    <p>Speed increases as the blockchain grows longer</p>
+                </div>
+                <div class="instruction">
+                    <div class="instruction-icon node-icon"></div>
+                    <p>Move your node with arrow keys to survive as long as possible</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>BlockChain Runner 2D | A futuristic blockchain-inspired game | Made with HTML5, CSS3 & JavaScript</p>
+        </footer>
+    </div>
+    
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2><i class="fas fa-exclamation-triangle"></i> NODE CORRUPTED</h2>
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <span>Final Score:</span>
+                    <span id="final-score">0</span>
+                </div>
+                <div class="modal-stat">
+                    <span>Wallet Balance:</span>
+                    <span id="final-wallet">0 BCT</span>
+                </div>
+                <div class="modal-stat">
+                    <span>Chain Length:</span>
+                    <span id="final-chain">0</span>
+                </div>
+            </div>
+            <button id="playAgainBtn" class="btn btn-primary">
+                <i class="fas fa-play"></i> PLAY AGAIN
+            </button>
+        </div>
+    </div>
+    
+    <div id="startModal" class="modal">
+        <div class="modal-content">
+            <h2><i class="fas fa-rocket"></i> BLOCKCHAIN RUNNER 2D</h2>
+            <p>Navigate your digital node through the blockchain tunnel. Collect data blocks, avoid corruption, and grow your blockchain!</p>
+            <div class="start-instructions">
+                <h3><i class="fas fa-play-circle"></i> HOW TO PLAY</h3>
+                <ul>
+                    <li>Use <strong>LEFT</strong> and <strong>RIGHT</strong> arrow keys to move</li>
+                    <li>Collect <span class="highlight-blue">blue data blocks</span> for points</li>
+                    <li>Avoid <span class="highlight-red">red corrupted blocks</span> to protect your health</li>
+                    <li>Speed increases as your blockchain grows</li>
+                </ul>
+            </div>
+            <button id="startBtn" class="btn btn-primary">
+                <i class="fas fa-play"></i> START MINING
+            </button>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
