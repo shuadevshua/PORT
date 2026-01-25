@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Tracer | Futuristic Stock Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+</head>
+<body>
+    <!-- Animated Blockchain Network Background -->
+    <div class="blockchain-network">
+        <canvas id="network-canvas"></canvas>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Stock Market Tracer</h1>
+                    <p> Stock Dashboard</p>
+                </div>
+            </div>
+            
+            <div class="market-status">
+                <div class="status-indicator active" id="market-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Market Open</span>
+                </div>
+                <div class="last-updated" id="last-updated">
+                    Last updated: <span>--:--:--</span>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="stock-search" placeholder="Search stocks (e.g., AAPL, TSLA)">
+                    <div class="search-autocomplete" id="autocomplete-results"></div>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2><i class="fas fa-star"></i> My Watchlist</h2>
+                    <span class="watchlist-count" id="watchlist-count">0 stocks</span>
+                </div>
+                
+                <div class="watchlist-container" id="watchlist-container">
+                    <div class="empty-watchlist" id="empty-watchlist-btn">
+                        <p>Add stocks to your watchlist</p>
+                        <button class="plus-button">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="filters">
+                    <h3><i class="fas fa-filter"></i> Filters</h3>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="gainers">Gainers</button>
+                        <button class="filter-btn" data-filter="losers">Losers</button>
+                        <button class="filter-btn" data-filter="tech">Tech</button>
+                    </div>
+                </div>
+                
+                <div class="keyboard-shortcuts">
+                    <h3><i class="fas fa-keyboard"></i> Shortcuts</h3>
+                    <ul>
+                        <li><kbd>Ctrl</kbd> + <kbd>Space</kbd> : Focus Search</li>
+                        <li><kbd>Ctrl</kbd> + <kbd>D</kbd> : Toggle Theme</li>
+                        <li><kbd>↑</kbd> <kbd>↓</kbd> : Navigate Stocks</li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <!-- Main Dashboard -->
+            <main class="dashboard">
+                <!-- Chart Section -->
+                <section class="chart-section">
+                    <div class="chart-header">
+                        <div class="chart-title">
+                            <h2 id="selected-stock-name">Apple Inc. (AAPL)</h2>
+                            <div class="stock-price-change">
+                                <span class="price" id="selected-stock-price">$178.72</span>
+                                <span class="change positive" id="selected-stock-change">+1.24%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeframe-selector">
+                            <button class="timeframe-btn active" data-timeframe="1D">1D</button>
+                            <button class="timeframe-btn" data-timeframe="1W">1W</button>
+                            <button class="timeframe-btn" data-timeframe="1M">1M</button>
+                            <button class="timeframe-btn" data-timeframe="1Y">1Y</button>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="stock-chart"></canvas>
+                        <div class="chart-tooltip" id="chart-tooltip"></div>
+                    </div>
+                </section>
+                
+                <!-- Stock Cards Grid -->
+                <section class="stocks-grid" id="live-market">
+                    <div class="section-header">
+                        <h2><i class="fas fa-chart-line"></i> Live Market</h2>
+                        <button class="refresh-btn" id="refresh-data">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                    
+                    <div class="stocks-container" id="stocks-container">
+                        <!-- Stock cards will be dynamically generated here -->
+                    </div>
+                </section>
+                
+                <!-- Market Overview -->
+                <section class="market-overview">
+                    <div class="overview-header">
+                        <h2><i class="fas fa-globe"></i> Market Overview</h2>
+                        <div class="market-indices">
+                            <span class="market-index"><i class="fas fa-arrow-up"></i> S&P 500: +0.8%</span>
+                            <span class="market-index"><i class="fas fa-arrow-down"></i> NASDAQ: -0.2%</span>
+                            <span class="market-index"><i class="fas fa-arrow-up"></i> DOW: +0.5%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-cards">
+                        <div class="overview-card gainers">
+                            <h3><i class="fas fa-arrow-up"></i> Top Gainers</h3>
+                            <div class="overview-list" id="top-gainers">
+                                <!-- Top gainers will be populated here -->
+                            </div>
+                        </div>
+                        
+                        <div class="overview-card losers">
+                            <h3><i class="fas fa-arrow-down"></i> Top Losers</h3>
+                            <div class="overview-list" id="top-losers">
+                                <!-- Top losers will be populated here -->
+                            </div>
+                        </div>
+                        
+                        <div class="overview-card volume">
+                            <h3><i class="fas fa-chart-bar"></i> Volume Leaders</h3>
+                            <div class="overview-list" id="volume-leaders">
+                                <!-- Volume leaders will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <div class="api-status">
+                    <span class="status-dot active"></span>
+                    <span>API: <span id="api-status-text">Connected</span></span>
+                </div>
+                <div class="footer-timestamp">
+                    Data updates every <span id="update-frequency">10</span> seconds
+                </div>
+            </div>
+            
+            <div class="footer-center">
+                <div class="data-flow">
+                    <div class="flow-node"></div>
+                    <div class="flow-line"></div>
+                    <div class="flow-node"></div>
+                    <div class="flow-line"></div>
+                    <div class="flow-node"></div>
+                </div>
+                <p>Live Blockchain Data Flow Active</p>
+            </div>
+            
+            <div class="footer-right">
+                <p>BlockChain Tracer v1.0 | Stock Dashboard</p>
+                <p class="footer-credits">Designed with <i class="fas fa-heart"></i> for portfolio showcase</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Ripple Effect Container -->
+    <div id="ripple-container"></div>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
